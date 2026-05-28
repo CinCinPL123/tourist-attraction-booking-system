@@ -153,6 +153,14 @@ export default function Home() {
         showSystemToast(`Logged in successfully as ${data.name}`);
         setEmailInput('');
         setPasswordInput('');
+        
+        // Reset filters and states on login
+        setSelectedCategory('all');
+        setSearchQuery('');
+        setMaxPrice(150);
+        setKidFriendly(false);
+        setSelectedAttractionForBooking(null);
+        setActiveReviewAttractionId(null);
       } else {
         showSystemToast(`Login failed: ${data.error}`);
       }
@@ -166,6 +174,14 @@ export default function Home() {
     setLoggedInUser(null);
     localStorage.removeItem('tourist_booking_user');
     showSystemToast('Logged out successfully.');
+    
+    // Reset filters and states on logout
+    setSelectedCategory('all');
+    setSearchQuery('');
+    setMaxPrice(150);
+    setKidFriendly(false);
+    setSelectedAttractionForBooking(null);
+    setActiveReviewAttractionId(null);
   };
 
   // Registration handler
@@ -206,6 +222,14 @@ export default function Home() {
         setRegTaxNumber('');
         setRegDescription('');
         setAuthMode('login');
+        
+        // Reset filters and states on registration
+        setSelectedCategory('all');
+        setSearchQuery('');
+        setMaxPrice(150);
+        setKidFriendly(false);
+        setSelectedAttractionForBooking(null);
+        setActiveReviewAttractionId(null);
       } else {
         showSystemToast(`Registration failed: ${data.error}`);
       }
